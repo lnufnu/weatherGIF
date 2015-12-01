@@ -1,3 +1,19 @@
 <template name="layout">
+  <div class="something">
+      <h1>Choose your city</h1>
+  </div>
+  <select class="cities">
+    <option>Houston</option>
+    <option>Austin</option>
+    <option>Fort Worth, TX</option>
+    <option>Austin, TX</option>
+  </select>
 
+  <div class="{{#if select}}page-header{{/if}}">
+    <h2>
+      <small>
+          {{jweather}}
+      </small>
+    </h2>
+  </div>
 </template>

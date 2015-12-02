@@ -1,11 +1,15 @@
-Template.gifs.helpers ({
-  'weatherGif': function() {
-  console.log("...i'm in here");
-    Meteor.call('getWeatherGif', city, function(err, results) {
-      console.log('I MADE IT');
-      Session.set('gif', JSON.parse(results.content).url)
-    });
-    var gifString = Session.get('gif');
-    return gifString;
-  }
-});
+if (Meteor.isClient) {
+  Template.gifs.helpers ({
+      'weatherGif': function() {
+  //      var city = Session.get('city');
+  //      had this function taking city as param...not sure why
+        Meteor.call('getWeatherGif', forecast, function(err, results) {
+          parsed = JSON.parse(results.content);
+          Session.set('gif', parsed.data[0].embed_url);
+        });
+        console.log(Session.get('gif'));
+        var gif = Session.get('gif');
+        return ('<iframe src="' + gif + '">');
+      }
+  });
+}

@@ -8,12 +8,32 @@ Template.layout.helpers({
 //    });
 //    forecast = Session.get('weather');
 //    return (forecast + ' in ' + city).toUpperCase();
-      forecast = 'OVERCAST';
-      return 'OVERCAST';
+      forecast = 'CLOUDY';
+      return 'CLOUDY';
   }
 });
 
 Template.layout.events({
+
+  "submit .searchCities": function (event) {
+
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get value from form element
+    var text = event.target.text.value;
+
+    // Insert a task into the collection - need to write function to pass it to
+    // getWeather in server.js
+    Tasks.insert({
+      text: text,
+      createdAt: new Date() // current time
+    });
+
+    // Clear form
+    event.target.text.value = "";
+  }
+
   'change .cities':function(event, template){
     Session.set('city', template.find('.cities').value);
   }

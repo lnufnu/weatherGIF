@@ -1,13 +1,21 @@
 <template name="layout">
-  <div class="something">
-      <h1>Choose your city</h1>
+
+  <div class="form">
+    <form class="new-task">
+      <div class="form-group">
+        <h3>
+          <label for="cities">City name:</label>
+          <input type="text" name="cities" id="cit" placeholder="Please enter a city" />
+        </h3>
+      </div>
+      <div class="form-group">
+        <h3>
+          <label for="states">State name:</label>
+          <input type="text" name="states" placeholder="Please enter a state" />
+      </h3>
+      </div>
+    </form>
   </div>
-  <select class="cities">
-    <option>Miami</option>
-    <option>Los Angeles</option>
-    <option>London</option>
-    <option>Austin, TX</option>
-  </select>
 
   <div class="{{#if select}}page-header{{/if}}">
     <h2>
@@ -16,4 +24,15 @@
       </small>
     </h2>
   </div>
+
+  <div class="something">
+      <h1>Choose your city</h1>
+  </div>
+
+  <select class="cities">
+    <option>Miami</option>
+    <option>Los Angeles</option>
+    <option>London</option>
+    <option>Austin, TX</option>
+  </select>
 </template>

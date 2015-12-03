@@ -1,11 +1,21 @@
 <head>
   <title>weather</title>
+  <link href="client/.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="container">
-  <h1>Get the weather!</h1>
-    {{> layout}}
-    {{> gifs}}
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="jumbotron">
+        <h1>Get the weather!</h1>
+      </div>  
+        {{> layout}}
+    </div>
+
+    <div class="col-lg-6">
+      {{> gifs}}
+    </div>
+  </div>
 </div>
 </body>

@@ -1,31 +1,30 @@
 <template name="layout">
 
-  <div class="form">
-    <form class="new-task">
+  <div class="form.jumbotron">
+    <form class="searchCity">
       <div class="form-group">
         <h3>
           <label for="cities">City name:</label>
-          <input type="text" name="cities" id="cit" placeholder="Please enter a city" />
+          <input type="text" name="cities" class="cities" placeholder="Please enter a city" />
         </h3>
       </div>
       <div class="form-group">
         <h3>
           <label for="states">State name:</label>
-          <input type="text" name="states" placeholder="Please enter a state" />
-      </h3>
+          <input type="text" name="states" class="states" placeholder="Please enter a state" />
+        </h3>
+        <input class="btn btn-default" type="submit" value="Submit">
       </div>
     </form>
   </div>
 
   <div class="{{#if select}}page-header{{/if}}">
     <h2>
-      <small>
-          {{currentWeather}}
-      </small>
+      {{currentWeather}}
     </h2>
   </div>
 
-  <div class="something">
+  <div class="drop-down">
       <h1>Choose your city</h1>
   </div>
 

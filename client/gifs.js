@@ -6,10 +6,10 @@ if (Meteor.isClient) {
   //      with different API
         Meteor.call('getWeatherGif', forecast, function(err, results) {
           parsed = JSON.parse(results.content);
-          Session.set('gif', parsed.data[0].embed_url);
+          Session.set('gifPath', parsed.data[0].embed_url);
         });
-        var gif = Session.get('gif');
-        return ('<iframe src="' + gif + '">');
+        var gifPath = Session.get('gifPath');
+        return gifPath;
       }
   });
 }

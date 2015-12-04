@@ -1,6 +1,19 @@
+//RecentlyQueried = new Mongo.Collection("recentlyQueried");
+
+//Template.body.helpers({
+//  recentlyQueried: () {
+
+//  }
+//});
+
+
 Template.recentCities.helpers({
-  'saveCities': function() {
+  'setRecentlyQueried': function() {
     var recentlyQueried = Session.get('recentlyQueried');
+    console.log(recentlyQueried);
+  },
+  'saveCities': function() {
+//    var recentlyQueried = Session.get('recentlyQueried');
     var city = Session.get('city');
     var state = Session.get('state');
     recentlyQueried.push(city);
@@ -10,8 +23,18 @@ Template.recentCities.helpers({
   }
 
 
-
 });
+
+
+
+if (Meteor.isClient) {
+ // This code only runs on the client
+ Template.body.helpers({
+   tasks: function () {
+     return Tasks.find({});
+   }
+ });
+}
 
 
 

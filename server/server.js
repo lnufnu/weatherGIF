@@ -1,6 +1,6 @@
 Meteor.methods({
   'getWeather': function(city, state){
-    return Meteor.http.call('GET', 'http://api.wunderground.com/api/8102e9fef9e3a203/conditions/q/TX/' + city + '.json');
+    return Meteor.http.call('GET', 'http://api.wunderground.com/api/8102e9fef9e3a203/conditions/q/'+ state + '/' + city + '.json');
   },
 
   'getWeatherGif': function(forecast){

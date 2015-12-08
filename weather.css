@@ -1,0 +1,33 @@
+body {
+  background-color: #2F91B9;
+  font-family: 'Roboto', sans-serif;
+}
+#header_Text {
+  font-size: 7em !important;
+  font-family: 'Pacifico', cursive !important;
+  margin-bottom: 25px;
+}
+.logos {
+  font-family: 'Pacifico', cursive !important;
+  margin-bottom: 20px;
+}
+.logoimg img {
+  max-width: 200px;
+  background-color: #FFF;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 10px solid #dfac12;
+  color: #FFF;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+.layout {
+}
+
+.container, .gif-link, .gif {
+
+}
+
+iframe {
+  border: #334978 3px solid;
+}

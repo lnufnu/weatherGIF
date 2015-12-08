@@ -1,10 +1,3 @@
-//Template.searchForm.helpers ({
-//  'submit .searchCity': function(event){
-//    Session.set('city', event.target[0].value);
-//    console.log(Session.get('city'));
-//  }
-//});
-
 Template.searchForm.events({
   "submit form": function (event, template) {
     event.preventDefault();
